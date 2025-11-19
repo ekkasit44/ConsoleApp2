@@ -1,30 +1,46 @@
-﻿namespace ConsoleApp2
+namespace ConsoleApp2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            string name = "Ekkasit Srisuk";
+            string name = "";
             int height = 0;
+            string gender = "";
+
             Console.WriteLine("Hello, World!");
-            Console.WriteLine("My name is Ekkasit srisuk");
-            Console.WriteLine("please, input your full name (ENG):");
-            Console.WriteLine("Computer science Program");
-            name = Console.ReadLine();
-            Console.WriteLine("Hello Welcome"+name);
-            Console.WriteLine("Please, fill in you height(cm) : ");
-            height = Convert.ToInt16(Console.ReadLine());
-            int Weight = height - 100;
-            Console.WriteLine("You ideal weight is" + Weight.ToString());
-            Console.ReadKey();
+            Console.WriteLine("My name is Ekkasit Srisuk");
+            Console.WriteLine("Please input your full name (ENG):");
+            Console.WriteLine("Computer Science Program");
+            while (name.Length < 2)
+            {
+                name = Console.ReadLine();
 
+            }
 
-
-            Console.WriteLine("------------------+++++-------------------");
-            Console.Write("My Hometown is");
-            Console.Write("Udon thani");
-            Console.WriteLine("Thailand");
-
+            Console.WriteLine("Please enter your gender (m or f): "); 
+            while (gender.ToLower() != "m" && gender.ToLower() != "f")
+            {
+               
+                Console.Write("Enter m or f: ");
+                gender = Console.ReadLine();
+                
+            }
+            Console.WriteLine("Please fill in your height (cm): ");
+                while (!int.TryParse(Console.ReadLine(), out height) || height <= 0)
+                {
+                    Console.WriteLine("Invalid height! Please enter a number greater than 0:");
+                    Console.Write("Try again: ");
+                }
+                int Weight = height - 100;
+                Console.WriteLine("Your ideal weight is " + Weight + " kg");
+                Console.ReadKey();
+                Console.WriteLine("------------------+++++-------------------");
+                Console.Write("My Hometown is ");
+                Console.Write("Udon Thani ");
+                Console.WriteLine("Thailand");
+            }
         }
     }
 }
+
