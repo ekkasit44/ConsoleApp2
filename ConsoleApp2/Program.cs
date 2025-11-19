@@ -18,13 +18,16 @@ namespace ConsoleApp2
 
             }
 
-            Console.WriteLine("Please enter your gender (m or f): "); 
-            while (gender.ToLower() != "m" && gender.ToLower() != "f")
+            Console.Write("Please enter your gender (m or f): "); 
+            while (gender.ToLower() != "m" && gender.ToLower() != "f")
             {
-               
-                Console.Write("Enter m or f: ");
-                gender = Console.ReadLine();
                 
+                gender = Console.ReadLine();
+                
+                if (gender.ToLower() != "m" && gender.ToLower() != "f")
+                {
+                    Console.Write("Invalid gender! Please enter m or f: ");
+                }
             }
             Console.WriteLine("Please fill in your height (cm): ");
                 while (!int.TryParse(Console.ReadLine(), out height) || height <= 0)
@@ -39,8 +42,7 @@ namespace ConsoleApp2
                 Console.Write("My Hometown is ");
                 Console.Write("Udon Thani ");
                 Console.WriteLine("Thailand");
-            }
+            
         }
     }
 }
-
